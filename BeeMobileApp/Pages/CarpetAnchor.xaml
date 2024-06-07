@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls" 
+             xmlns:tt="clr-namespace:SkiaSharp.Views.Maui;assembly=SkiaSharp.Views.Maui.Core"
+             x:Class="BamtecMobileApp.Pages.CarpetAnchor"
+             BackgroundColor="White"
+             Title="BamAPP">    
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <skia:SKCanvasView x:Name="CanvasView" EnableTouchEvents="True" PaintSurface="CanvasView_PaintSurface" Touch="CanvasView_TouchAction" /><!--Node for skia sharp 2D renderer-->
+                <ImageButton x:Name="SlingDocBtn" Source="SlingIcon.png" BackgroundColor="Transparent" BorderWidth="1" BorderColor="#9D9D9C" Margin="10" HorizontalOptions="Center" VerticalOptions="End" Clicked="SlingDocBtn_Clicked"/>
+                <!--<Grid.Effects> --><!-- This node is important for touch action on the 2D rendered skia sharp view.--><!--
+                    <tt:SKTouchAction x:Name="OnTouch" />
+                </Grid.Effects>-->
+            </Grid>
+            <Grid x:Name="SlingsOpt" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False" RowDefinitions="*,*,*,*">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="0.75" BackgroundColor="Black" Grid.RowSpan="4"/>
+                <StackLayout x:Name="topstack" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal" Grid.Row="1">
+                    <ImageButton ClassId="0" Source="WireSling.png" BackgroundColor="Transparent" Clicked="Sling_Selected"/>
+                    <ImageButton ClassId="1" Source="LiftStrap.png" BackgroundColor="Transparent" Clicked="Sling_Selected"/>
+                    <ImageButton ClassId="2" Source="RoundSling.png" BackgroundColor="Transparent" Clicked="Sling_Selected"/>
+                </StackLayout>
+                <StackLayout x:Name="bottomstack" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal" Grid.Row="2">
+                    <ImageButton ClassId="3" Source="ChainSling.png" BackgroundColor="Transparent" Clicked="Sling_Selected"/>
+                    <ImageButton ClassId="4" Source="WireRopeBlnc.png" BackgroundColor="Transparent" Clicked="Sling_Selected"/>
+                </StackLayout>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

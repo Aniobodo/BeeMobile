@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Again" xml:space="preserve">
+    <value>erneut versuchen</value>
+  </data>
+  <data name="AlreadyAcc" xml:space="preserve">
+    <value>Sie haben bereits ein Konto? Anmelden</value>
+  </data>
+  <data name="CarpetNotAvailable" xml:space="preserve">
+    <value>Der Teppich ist entweder nicht vorhanden oder bereits gescannt</value>
+  </data>
+  <data name="CarpetNr" xml:space="preserve">
+    <value>Teppich Nr. ?</value>
+  </data>
+  <data name="CheckNet" xml:space="preserve">
+    <value>Bitte prüfen Sie die Internetverbindung</value>
+  </data>
+  <data name="CompEmail" xml:space="preserve">
+    <value>Firma Email</value>
+  </data>
+  <data name="CompName" xml:space="preserve">
+    <value>Firma Name</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Passwort bestätigen</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="CreateAcc" xml:space="preserve">
+    <value>Konto erstellen</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Zugriff abgelehnt</value>
+  </data>
+  <data name="DeniedDetail" xml:space="preserve">
+    <value>Sie sind nicht registriert als </value>
+  </data>
+  <data name="EditProject" xml:space="preserve">
+    <value>Project bearbeiten</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email (beispiel@abc.com)</value>
+  </data>
+  <data name="EmailExist" xml:space="preserve">
+    <value>Die angegebene E-Mail-Adresse existiert bereits</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler!</value>
+  </data>
+  <data name="FalseEmail" xml:space="preserve">
+    <value>Email ist falsch</value>
+  </data>
+  <data name="Firstname" xml:space="preserve">
+    <value>Bitte geben Sie einen korrekten Vornamen ein</value>
+  </data>
+  <data name="FirstSignin" xml:space="preserve">
+    <value>Sie müssen sich zuerst anmelden</value>
+  </data>
+  <data name="Fname" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Passwort vergessen?</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importiert erfolgreich</value>
+  </data>
+  <data name="ImportErr" xml:space="preserve">
+    <value>Importfehler</value>
+  </data>
+  <data name="ImportSuccess" xml:space="preserve">
+    <value>Die Projektdateien wurden erfolgreich importiert</value>
+  </data>
+  <data name="Incorrect" xml:space="preserve">
+    <value>Die E-Mail oder das Passwort ist falsch</value>
+  </data>
+  <data name="IncorrectEm" xml:space="preserve">
+    <value>Falsch</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Ungültig</value>
+  </data>
+  <data name="InvEmail" xml:space="preserve">
+    <value>Bitte geben Sie eine gültige E-Mail Adresse ein</value>
+  </data>
+  <data name="Lastname" xml:space="preserve">
+    <value>Bitte geben Sie einen korrekten Nachnamen ein</value>
+  </data>
+  <data name="Lname" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="Logistic" xml:space="preserve">
+    <value>Logistik</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="NewProject" xml:space="preserve">
+    <value>Neu Project</value>
+  </data>
+  <data name="NoAccReg" xml:space="preserve">
+    <value>kein Konto? Registrieren</value>
+  </data>
+  <data name="NoDetail" xml:space="preserve">
+    <value>Keine Details für das ausgewählte Element verfügbar</value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>Passwort stimmt nicht überein</value>
+  </data>
+  <data name="NonSelected" xml:space="preserve">
+    <value>Keine Option ausgewählt</value>
+  </data>
+  <data name="NoProceed" xml:space="preserve">
+    <value>Bitte geben Sie die PXML-Dateien frei, bevor Sie weitermachen</value>
+  </data>
+  <data name="NotAvaialble" xml:space="preserve">
+    <value>nicht verfügbar</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>Oder</value>
+  </data>
+  <data name="PassFormat" xml:space="preserve">
+    <value>Das Passwort sollte mindestens 8 Zeichen enthalten, 1 numerisches Zeichen, 1 Kleinbuchstabe, 1 Großbuchstabe und 1 Sonderzeichen [@$!%*#?&amp;-.]</value>
+  </data>
+  <data name="PassSent" xml:space="preserve">
+    <value>Passwort gesendet</value>
+  </data>
+  <data name="PassSentDetail" xml:space="preserve">
+    <value>Ihr Passwort wird an Ihre E-Mail-Adresse geschickt.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="PNdescription" xml:space="preserve">
+    <value>Der angegebene Projektname existiert bereits</value>
+  </data>
+  <data name="PNerror" xml:space="preserve">
+    <value>Einen anderen Projektnamen einfügen</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="Producer" xml:space="preserve">
+    <value>Produzent</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Name des Projekts eingeben</value>
+  </data>
+  <data name="ProjectStart" xml:space="preserve">
+    <value>Ihr Projekt wurde gestartet</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrieren</value>
+  </data>
+  <data name="RegSuccess" xml:space="preserve">
+    <value>Registrierung erfolgreich</value>
+  </data>
+  <data name="SelectOne" xml:space="preserve">
+    <value>Bitte wählen Sie eine Option aus</value>
+  </data>
+  <data name="SelectUser" xml:space="preserve">
+    <value>Funktion?</value>
+  </data>
+  <data name="SendPassword" xml:space="preserve">
+    <value>Passwort senden</value>
+  </data>
+  <data name="SharePXML" xml:space="preserve">
+    <value>Freigeben der PXML-Dateien zu diesem Projekt</value>
+  </data>
+  <data name="ShowDetail" xml:space="preserve">
+    <value>Details anzeigen</value>
+  </data>
+  <data name="Succesfull" xml:space="preserve">
+    <value>Erfolgreich</value>
+  </data>
+  <data name="TitleNoNet" xml:space="preserve">
+    <value>Netzwerk kann nicht gefunden werden</value>
+  </data>
+  <data name="TotalLength" xml:space="preserve">
+    <value>Gesamte Laenge: </value>
+  </data>
+  <data name="TotalWeight" xml:space="preserve">
+    <value>Gesamte Masse: </value>
+  </data>
+  <data name="TotalWidth" xml:space="preserve">
+    <value>Gesamte Breite: </value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Anwender</value>
+  </data>
+  <data name="WrongProject" xml:space="preserve">
+    <value>Der Teppich gehört nicht zu diesem Projekt</value>
+  </data>
+</root>

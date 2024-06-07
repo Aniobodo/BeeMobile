@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top" />
+    <TextView
+        android:id="@+id/MeasureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:padding="5dp"
+        android:textSize="20dp" 
+        android:layout_margin="10dp"/>
+    <ImageButton
+        android:id="@+id/MeasureBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/startmeasure"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" 
+        android:scaleType="fitCenter"   
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:contentDescription=""/>
+    <ImageButton
+        android:id="@+id/CloseWindow"      
+        android:src="@drawable/crossicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp"
+        android:scaleType="fitCenter"
+        android:contentDescription=""/>
+    <ImageButton
+        android:id="@+id/ImgBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitCenter"
+        android:contentDescription=""/>
+
+    <ImageView
+        android:id="@+id/ImgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription=""/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ImgClose"
+        android:scaleType="fitCenter"
+        android:src="@drawable/crossicon"
+        android:background="@android:color/transparent"
+        android:contentDescription=""/>
+    
+    <TextView
+        android:id="@+id/LoadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#ffffff"
+        android:background="@android:color/black"
+        android:padding="5dp"
+        android:textSize="20dp"/>
+
+</RelativeLayout>

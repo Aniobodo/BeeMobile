@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"           
+           x:Class="BeeMobileApp.Pages.Reload"
+       xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+           xmlns:translator="clr-namespace:BeeMobileApp.Extensions"
+           Color="Transparent"
+           CanBeDismissedByTappingOutsideOfPopup="False">
+    
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame x:Name="ErrorFrame" BackgroundColor="Yellow">
+                <Label Text="{translator:Translate Error}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="Black" FontSize="40"/>
+            </Frame>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End" Orientation="Horizontal">
+                    <ImageButton x:Name="ClosePage" Source="CrossIcon.png" BackgroundColor="Transparent" Clicked="ClosePage_Clicked"/>
+                    <ImageButton x:Name="ReloadPage" Source="ResetIcon.png" BackgroundColor="#029939" Clicked="ReloadPage_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+    
+</mct:Popup>

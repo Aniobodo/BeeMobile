@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeeMobileApp.Pages.MainPage"
+             xmlns:local="clr-namespace:BeeMobileApp.Extensions"
+             xmlns:pwlocal="clr-namespace:BeeMobileApp.Classes"
+             NavigationPage.HasNavigationBar="False"                       
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#c7c7c7">
+    <Grid>
+        <!--<local:VideoPlayer VideoSource="BackVid.mov" />-->
+        <StackLayout x:Name="MainLayout" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20"> <!--This stack contains all the controls for main layout. Login and register layout-->
+            <Image Source="BeeLogo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button x:Name="SignInBtn" Text="{local:Translate Login}" BorderWidth="2" BorderColor="#164194" BackgroundColor="Transparent" TextColor="#164194" FontAttributes="Bold" FontSize="20" FontFamily="Arial" Clicked="SignInBtn_Clicked"/>
+            <Button x:Name="SignUpBtn" Text="{local:Translate Register}" BorderWidth="2" BorderColor="#164194" BackgroundColor="Transparent" TextColor="#164194"  FontAttributes="Bold" FontSize="20" FontFamily="Arial" Clicked="SignUpBtn_Clicked"/>
+        </StackLayout>
+        <StackLayout x:Name="LoginLayout" HorizontalOptions="Center" VerticalOptions="Center"> <!--This stack contains all the controls for main login page. Login with email and layout-->
+            <Image Source="BeeLogo.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30"/>
+            <Entry Placeholder="{local:Translate Email}" x:Name="EmailUser" HorizontalOptions="FillAndExpand" FontSize="20" FontFamily="Arial" TextColor="Black" PlaceholderColor="#9D9D9C"/>
+            <Grid>
+                <Entry Placeholder="{local:Translate Password}" x:Name="PasswordUser" FontSize="20" FontFamily="Arial" TextColor="Black" IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword }" PlaceholderColor="#9D9D9C"/>
+                <ImageButton VerticalOptions="Center" Margin="0,0,10,0" HeightRequest="25" HorizontalOptions="End" Source="ic_eye_hide">
+                    <ImageButton.Triggers>
+                        <EventTrigger Event="Clicked">
+                            <pwlocal:ShowPasswordTriggerAction ShowIcon="ic_eye" HideIcon="ic_eye_hide" x:Name="ShowPasswordActualTrigger"/>
+                        </EventTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </Grid>
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0">
+                    <Polyline Points="0,40,25,80,25,0" Fill="#164194" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="{local:Translate ForgotPassword}" TextColor="#164194" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ForgotPassword" Tapped="ForgotPassword_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1">
+                    <Polyline Points="0,40,25,80,25,0" Fill="#DC0D15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="Cancel" TextColor="#DC0D15" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="CancelLogin" Tapped="CancelLogin_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Column="1">
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="{local:Translate Login}" TextColor="#029939" FontSize="25" FontAttributes="Bold"/>
+                    <Polyline Points="0,0,0,80,25,40" Fill="#029939" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="SignIn" Tapped="SignIn_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </StackLayout> <!--This stack contains all the controls for register user layout-->
+        <StackLayout x:Name="RegisterLayout" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="BeeLogo.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30"/>
+            <Entry Placeholder="{local:Translate Email}" x:Name="EmailRegister" HorizontalOptions="FillAndExpand" FontSize="20" FontFamily="Arial" TextColor="Black" PlaceholderColor="#9D9D9C"/>
+            <Grid ColumnDefinitions="*,*" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0">
+                    <Polyline Points="0,40,25,80,25,0" Fill="#DC0D15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="Cancel" TextColor="#DC0D15" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="CancelRegister" Tapped="CancelRegister_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Column="1">
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="{local:Translate Register}" TextColor="#029939" FontSize="25" FontAttributes="Bold"/>
+                    <Polyline Points="0,0,0,80,25,40" Fill="#029939" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="SignUp" Tapped="SignUp_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <StackLayout x:Name="FPLayout" VerticalOptions="Center" HorizontalOptions="Center"> <!--This stack contains all the controls for forget password layout-->
+            <Image Source="BeeLogo.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30"/>
+            <Entry Placeholder="{local:Translate Email}" x:Name="EmailPass" HorizontalOptions="FillAndExpand" FontSize="20" FontFamily="Arial" TextColor="Black" PlaceholderColor="#9D9D9C"/>
+            <Grid ColumnDefinitions="*,*" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0">
+                    <Polyline Points="0,40,25,80,25,0" Fill="#DC0D15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="Cancel" TextColor="#DC0D15" FontSize="25" FontAttributes="Bold"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="CancelFP" Tapped="CancelFP_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Column="1">
+                    <Label HorizontalOptions="Center" VerticalOptions="End" Text="{local:Translate SendPassword}" TextColor="#029939" FontSize="25" FontAttributes="Bold"/>
+                    <Polyline Points="0,0,0,80,25,40" Fill="#029939" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="SendPassword" Tapped="SendPassword_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <Image x:Name="Emailing" Source="EmailIcon.png" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"/>
+    </Grid>
+    
+
+
+</ContentPage>

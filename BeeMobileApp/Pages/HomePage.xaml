@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="BeeMobileApp.Pages.HomePage"
+             BackgroundColor="#c7c7c7"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <ImageButton x:Name="WebsiteLogo" Source="BeeLogo.png" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" HeightRequest="50" Grid.Column="1" Clicked="WebsiteLogo_Clicked"/>       
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="LogoutIcon.png" Clicked="Logout_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <ImageButton x:Name="ProfileBtn" HorizontalOptions="End" VerticalOptions="Start" Source="ProfileIcon.png" Margin="10" Aspect="AspectFill" Clicked="ProfileBtn_Clicked"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" >                
+                <ImageButton x:Name="ViewVideoBtn" Source="VideoIcon.png" Margin="0,0,0,10" Clicked="ViewVideoBtn_Clicked"/>
+                <ImageButton x:Name="InfoBtn" BackgroundColor="#444444" Source="InfoIcon.png" Margin="0,0,10,10" Clicked="InfoBtn_Clicked"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton x:Name="ProjectBtn" Source="BeeProjectIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ProjectBtn_Clicked"/>
+                    <ImageButton x:Name="SiteRankingBtn" Source="RankingIcon.png" HorizontalOptions="Center" VerticalOptions="End" Clicked="SiteRankingBtn_Clicked"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton x:Name="GameBtn" Source="GameIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Clicked="GameBtn_Clicked"/>
+                    <ImageButton x:Name="GameRankingBtn" Source="RankingIcon.png" HorizontalOptions="Center" VerticalOptions="End" Clicked="GameRankingBtn_Clicked"/>
+                </StackLayout>      
+            </StackLayout>
+            <Grid x:Name="VideoGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False" BackgroundColor="Transparent">
+                <!--Video grid. Starts the video. Source of video is assigned in code-->
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.75"/>
+                <StackLayout>
+                    <Frame x:Name="VideoFrame" HorizontalOptions="Center" VerticalOptions="Center" Padding="0">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <toolkit:MediaElement x:Name="BeeAPPVideo" ShouldAutoPlay="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <ActivityIndicator Color="#DC0D15" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+                                <ActivityIndicator.Triggers>
+                                    <DataTrigger TargetType="ActivityIndicator" Binding="{Binding Source = {x:Reference BeeAPPVideo}, Path=CurrentState}">
+                                        <Setter Property="IsVisible" Value="True"/>
+                                        <Setter Property="IsRunning" Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="ActivityIndicator" Binding="{Binding Source={x:Reference BeeAPPVideo}, Path=CurrentState}">
+                                        <Setter Property="IsVisible" Value="True"/>
+                                        <Setter Property="IsRunning" Value="True"/>
+                                    </DataTrigger>
+                                </ActivityIndicator.Triggers>
+                            </ActivityIndicator>
+                        </Grid>
+                    </Frame>
+                    <ImageButton x:Name="CloseVideo" Source="CrossIcon.png" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="CloseVideo_Clicked"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

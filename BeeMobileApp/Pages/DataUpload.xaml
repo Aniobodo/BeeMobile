@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeeMobileApp.Pages.DataUpload"
+             BackgroundColor="White"
+             Title="BeeAPP"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="HeaderLogo.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout x:Name="LoadStack" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label x:Name="Sending" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                    <ActivityIndicator IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" Color="Black"/>
+                </StackLayout>
+                <ProgressBar x:Name="ShowProgress" ProgressColor="#029939" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout x:Name="WaitStack" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Please wait..." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                <ActivityIndicator IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" Color="Black"/>
+            </StackLayout>
+        </Grid>        
+    </ContentPage.Content>
+</ContentPage>

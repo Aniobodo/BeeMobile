@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeeMobileApp.Pages.TeamSelection"
+             BackgroundColor="#c7c7c7"
+             Title="BeeAPP">
+    <ContentPage.Content>
+        <Grid>
+            <Grid x:Name="OldTeam" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> <!--Shows the team already constructed for this project. Option to proceed with the same team or make a new team-->
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame x:Name="OldTeamFrame" HorizontalOptions="Center" VerticalOptions="Center" Padding="0" BackgroundColor="#c7c7c7" CornerRadius="10" HasShadow="True">
+                        <StackLayout Spacing="5">
+                            <Label x:Name="PrevTeamName" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25" TextColor="White" BackgroundColor="#444444"/>
+                            <ListView x:Name="TeamMemberList" SelectionMode="None" HasUnevenRows="False" SeparatorVisibility="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid ColumnDefinitions="2*,8*" >
+                                                <Label Text="{Binding TeamIndex}" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" TextColor="Black"/>
+                                                <Label Text="{Binding TeamMember}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" FontSize="20" TextColor="Black"/>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>                            
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout x:Name="NTBtnStack" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton x:Name="NewTeam" Source="PartnersIcon.png" BackgroundColor="#029939" HorizontalOptions="Center" VerticalOptions="Center" Clicked="NewTeam_Clicked"/>
+                        <ImageButton x:Name="ContinueTeam" Source="ArrowRight.png" BackgroundColor="#164194" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ContinueTeam_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Grid x:Name="TeamList" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> <!--List of members to select from as a team. Camera option to take a team picture-->
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                    <Frame x:Name="TeamFrame" HorizontalOptions="Center" VerticalOptions="Center" Padding="0" BackgroundColor="#c7c7c7" CornerRadius="10" HasShadow="True">
+                        <StackLayout Spacing="5">
+                            <Image x:Name="TeamImg" Source="PartnersIcon.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White"/>
+                            <Entry Placeholder="Team Name" x:Name="TeamName" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25" TextColor="Black"/>
+                            <ListView x:Name="CheckListView" HasUnevenRows="True" SelectionMode="None" ItemTapped="CheckListView_ItemTapped" SeparatorVisibility="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                                <CheckBox Visual="Material" IsChecked="{Binding UserSelected}" HorizontalOptions="Center" VerticalOptions="Center" Color="Black"/>
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="0" Padding="0,5">
+                                                    <Label Text="{Binding UserName}" FontSize="20" FontFamily="Arial" TextColor="Black"/>
+                                                    <Label Text="{Binding UserEmail}" FontSize="18" FontFamily="Arial" TextColor="Black"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>                            
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout x:Name="BtmStack" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ImageButton x:Name="CameraBtn" Source="CameraIcon.png" BackgroundColor="#164194" HorizontalOptions="Center" VerticalOptions="Center" Clicked="CameraBtn_Clicked"/>
+                        <ImageButton x:Name="RejectBtn" Source="CrossIcon.png" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="RejectBtn_Clicked"/>
+                        <ImageButton x:Name="SaveBtn" Source="SaveIcon.png" BackgroundColor="#029939" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SaveBtn_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout x:Name="TeamView" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Spacing="50"> <!--Crane and installation team selection-->
+                <ImageButton x:Name="CranePersonal" Source="CraneTeamIcon.png" Clicked="CranePersonal_Clicked"/>
+                <ImageButton x:Name="InstallationPersonal" Source="InstallationTeamIcon.png" Clicked="InstallationPersonal_Clicked"/>
+            </StackLayout>
+            <Image x:Name="Saving" Source="SaveIcon.png" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

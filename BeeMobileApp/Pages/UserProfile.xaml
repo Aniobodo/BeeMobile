@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translator="clr-namespace:BeeMobileApp.Extensions"
+             x:Class="BeeMobileApp.Pages.UserProfile"
+             BackgroundColor="#c7c7c7"
+             Title="BeeAPP">
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Padding="20" VerticalOptions="Center">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center"> <!--Profile image-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ProfileGrid"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame x:Name="ProfileImg" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+                            <ImageButton x:Name="ProfilePhoto"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Source="ProfileIcon.png" Clicked="ProfilePhoto_Clicked"/>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="DetailStack">  <!--User infomation fields-->
+                        <Entry Placeholder="{translator:Translate Fname}" x:Name="FirstName" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial" PlaceholderColor="#029939" TextChanged="FirstName_TextChanged"/>
+                        <Entry Placeholder="{translator:Translate Lname}" x:Name="LastName" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial" PlaceholderColor="#029939" TextChanged="LastName_TextChanged"/>
+                        <Picker x:Name="CountryPicker" Title="{translator:Translate Countries}" TitleColor="#029939" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" SelectedIndexChanged="CountryPicker_SelectedIndexChanged"/>
+                        <Entry Placeholder="{translator:Translate CompName}" x:Name="FirmName" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial"/>
+                        <Grid ColumnDefinitions="*,*">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0">
+                                <Polyline Points="0,40,25,80,25,0" Fill="#164194" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label HorizontalOptions="Center" VerticalOptions="End" Text="Change Password" TextColor="#164194" FontSize="25" FontAttributes="Bold"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="ChangePassword" Tapped="ChangePassword_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Column="1">
+                                <Label HorizontalOptions="Center" VerticalOptions="End" Text="Submit" TextColor="#029939" FontSize="25" FontAttributes="Bold"/>
+                                <Polyline Points="0,0,0,80,25,40" Fill="#029939" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="SaveInfo" Tapped="SaveInfo_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout x:Name="PasswordChange"> <!--Password chane fields-->
+                        <Entry x:Name="CurrentPassword"  Placeholder="Current password" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial" TextChanged="CurrentPassword_TextChanged"/>
+                        <Grid>
+                            <Entry x:Name="NewPassword" Placeholder="New password" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial" TextChanged="NewPassword_TextChanged"/>
+                            <ImageButton x:Name="PassInfoBtn" BackgroundColor="#164194" VerticalOptions="Start" HorizontalOptions="End" Source="InfoIcon.png" HeightRequest="30" CornerRadius="15" Clicked="PassInfoBtn_Clicked"/>
+                        </Grid>
+                        <Entry x:Name="RepeatPassword" Placeholder="Re-enter new password" HorizontalTextAlignment="Center" FontSize="20" TextColor="Black" FontFamily="Arial" TextChanged="RepeatPassword_TextChanged"/>
+                        <Grid ColumnDefinitions="*,*">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="0">
+                                <Polyline Points="0,40,25,80,25,0" Fill="#DC0D15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label HorizontalOptions="Center" VerticalOptions="End" Text="Cancel" TextColor="#DC0D15" FontSize="25" FontAttributes="Bold"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="CancelBtn" Tapped="CancelBtn_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Column="1">
+                                <Label HorizontalOptions="Center" VerticalOptions="End" Text="Submit" TextColor="#029939" FontSize="25" FontAttributes="Bold"/>
+                                <Polyline Points="0,0,0,80,25,40" Fill="#029939" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="SavePassword" Tapped="SavePassword_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>                        
+                </StackLayout>
+            </ScrollView>
+            <Grid x:Name="PhotoOpt" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> <!--Photo upload options-->
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="0.75" BackgroundColor="Black"/>
+                <Grid HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="25" ColumnSpacing="25">
+                    <ImageButton x:Name="GalleryBtn" Source="GalleryIcon.png" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#164194" Clicked="GalleryBtn_Clicked"/>
+                    <ImageButton x:Name="CameraBtn" Source="CameraIcon.png" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" BackgroundColor="#164194" Clicked="CameraBtn_Clicked"/>
+                    <ImageButton x:Name="AvatarBtn" Source="AvatarIcon.png" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" BackgroundColor="#029939" Clicked="AvatarBtn_Clicked"/>
+                    <ImageButton x:Name="DeleteBtn" Source="DeleteIcon.png" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" BackgroundColor="#DC0D15" Clicked="DeleteBtn_Clicked"/>
+                </Grid>                
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="OptTapGestureRecognizer" Tapped="OptTapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid x:Name="AvatarGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> <!--Avatar options-->
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="0.75" BackgroundColor="Black" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <ImageButton x:Name="Avatar1" ClassId="1" BackgroundColor="#c7c7c7" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" Clicked="Avatar_Clicked"/>
+                <ImageButton x:Name="Avatar2" ClassId="2" BackgroundColor="#c7c7c7" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" Clicked="Avatar_Clicked"/>
+                <ImageButton x:Name="Avatar3" ClassId="3" BackgroundColor="#c7c7c7" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Clicked="Avatar_Clicked"/>
+                <ImageButton x:Name="Avatar4" ClassId="4" BackgroundColor="#c7c7c7" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Clicked="Avatar_Clicked"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="AvatarTapGestureRecognizer" Tapped="AvatarTapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Image x:Name="Saving" Source="SaveIcon.png" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

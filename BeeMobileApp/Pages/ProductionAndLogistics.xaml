@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeeMobileApp.Pages.ProductionAndLogistics"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             BackgroundColor="#c7c7c7"
+             Title="BeeAPP">
+   
+    
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView x:Name="OverViewList" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding StrucMemName}" TextColor="#164194" FontFamily="Arial" FontSize="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <StackLayout BindableLayout.ItemsSource="{Binding ProductionLogisticInfo}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ColumnDefinitions="*,13*,5*,*" BackgroundColor="#c7c7c7" Margin="0,5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="{Binding PLFrameHeight}"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding Carpet}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Arial" FontSize="25" FontAttributes="Bold"/>
+                                            <Frame  Grid.Row="0" Grid.Column="2" Padding="{Binding PLPadding}" CornerRadius="{Binding PLFrameCorner}" BackgroundColor="{Binding BackColor}">
+                                                <Image Source="{Binding ImagePL}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                                            </Frame>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>                            
+                        </StackLayout>                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ImageButton x:Name="ScanBtn" HorizontalOptions="Center" VerticalOptions="End" Source="QRcodeIcon.png" BackgroundColor="#029939" Margin="10" Clicked="ScanBtn_Clicked"/>
+            <Grid x:Name="ScanView" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="false"> <!--QR code scanning grid-->
+                <zxing:CameraBarcodeReaderView x:Name="QRScanner" IsDetecting="True" BarcodesDetected="QRScanner_BarcodesDetected" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <zxing:CameraBarcodeReaderView Visual="Align the barcode within the frame"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="10">
+                    <ImageButton x:Name="FlashBtn" HorizontalOptions="Center" VerticalOptions="Center" Source="FlashLightIcon.png" BackgroundColor="#9D9D9C" Clicked="FlashBtn_Clicked"/>
+                    <ImageButton x:Name="TextBtn" Source="TextIcon.png" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" Clicked="TextBtn_Clicked"/>
+                </StackLayout>                
+                <ImageButton x:Name="CloseBtn" HorizontalOptions="End" VerticalOptions="Start" Source="CrossIcon.png" BackgroundColor="Transparent" IsOpaque="True" Margin="10" Clicked="CloseBtn_Clicked"/>
+            </Grid>
+            <Image x:Name="ImgSuccess" HorizontalOptions="Center" VerticalOptions="Center" Source="SuccessIcon.png"/>                       
+        </Grid>       
+        
+    </ContentPage.Content>
+    
+</ContentPage>
